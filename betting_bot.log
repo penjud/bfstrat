@@ -1,0 +1,547 @@
+2024-04-02 21:15:25,075 - flumine.clients.clients - INFO - Client added
+2024-04-02 21:15:25,076 - flumine.baseflumine - INFO - Adding client control MAX_TRANSACTION_COUNT
+2024-04-02 21:15:25,076 - flumine.baseflumine - INFO - Adding trading control ORDER_VALIDATION
+2024-04-02 21:15:25,076 - flumine.baseflumine - INFO - Adding trading control MARKET_VALIDATION
+2024-04-02 21:15:25,076 - flumine.baseflumine - INFO - Adding trading control STRATEGY_EXPOSURE
+2024-04-02 21:15:25,076 - flumine.baseflumine - INFO - Adding strategy FlatKashModel
+2024-04-02 21:15:25,077 - flumine.streams.streams - INFO - Creating new <class 'flumine.streams.marketstream.MarketStream'> (2000) for strategy FlatKashModel
+2024-04-02 21:15:25,077 - flumine.baseflumine - INFO - Adding strategy FlatIggyModel
+2024-04-02 21:15:25,077 - flumine.streams.streams - INFO - Creating new <class 'flumine.streams.marketstream.MarketStream'> (3000) for strategy FlatIggyModel
+2024-04-02 21:15:25,078 - flumine.baseflumine - INFO - Adding worker terminate
+2024-04-02 21:15:25,083 - __main__ - INFO - Starting the server...
+2024-04-02 21:15:25,087 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.1.37:5000
+2024-04-02 21:15:25,087 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2024-04-02 21:16:43,020 - flumine.baseflumine - INFO - Starting flumine
+2024-04-02 21:16:44,513 - flumine.clients.clients - INFO - Client login
+2024-04-02 21:16:45,657 - flumine.clients.clients - INFO - Client update account details
+2024-04-02 21:16:45,657 - flumine.baseflumine - INFO - Adding worker keep_alive
+2024-04-02 21:16:45,657 - flumine.baseflumine - INFO - Adding worker poll_market_catalogue
+2024-04-02 21:16:45,657 - flumine.baseflumine - INFO - Adding worker poll_account_balance
+2024-04-02 21:16:45,657 - flumine.baseflumine - INFO - Adding worker poll_market_closure
+2024-04-02 21:16:45,657 - flumine.worker - INFO - BackgroundWorker terminate starting
+2024-04-02 21:16:45,657 - flumine.worker - INFO - BackgroundWorker keep_alive starting
+2024-04-02 21:16:45,658 - flumine.worker - INFO - BackgroundWorker poll_market_catalogue starting
+2024-04-02 21:16:45,658 - flumine.worker - INFO - BackgroundWorker poll_account_balance starting
+2024-04-02 21:16:45,658 - flumine.worker - INFO - BackgroundWorker poll_market_closure starting
+2024-04-02 21:16:49,026 - flumine.streams.streams - INFO - Starting streams..
+2024-04-02 21:16:49,026 - flumine.streams.orderstream - INFO - Starting OrderStream 1000
+2024-04-02 21:16:49,027 - flumine.streams.orderstream - INFO - Starting output_thread (OrderStream 1000)
+2024-04-02 21:16:49,027 - betfairlightweight.streaming.listener - INFO - [Register: 1001]: orderSubscription
+2024-04-02 21:16:49,028 - betfairlightweight.streaming.stream - INFO - [OrderStream: 1001]: "OrderStream" created
+2024-04-02 21:16:50,041 - betfairlightweight.streaming.listener - INFO - [OrderStream: 1001]: connection_id: 103-020424111649-17718
+2024-04-02 21:16:50,279 - flumine.streams.marketstream - INFO - Starting MarketStream 2000
+2024-04-02 21:16:50,279 - flumine.streams.marketstream - INFO - Starting output_thread (MarketStream 2000)
+2024-04-02 21:16:50,280 - betfairlightweight.streaming.listener - INFO - [Register: 2001]: marketSubscription
+2024-04-02 21:16:50,280 - betfairlightweight.streaming.stream - INFO - [MarketStream: 2001]: "MarketStream" created
+2024-04-02 21:16:50,355 - betfairlightweight.streaming.listener - INFO - [OrderStream: 1002]: SUCCESS (1 connections available)
+2024-04-02 21:16:50,664 - betfairlightweight.streaming.listener - INFO - [OrderStream: 1001]: SUCCESS (1 connections available)
+2024-04-02 21:16:50,676 - betfairlightweight.streaming.stream - INFO - [OrderStream: 1001]: 0 oc added
+2024-04-02 21:16:51,263 - betfairlightweight.streaming.listener - INFO - [MarketStream: 2001]: connection_id: 101-020424111651-18600
+2024-04-02 21:16:51,281 - flumine.streams.marketstream - INFO - Starting MarketStream 3000
+2024-04-02 21:16:51,282 - flumine.streams.marketstream - INFO - Starting output_thread (MarketStream 3000)
+2024-04-02 21:16:51,282 - betfairlightweight.streaming.listener - INFO - [Register: 3001]: marketSubscription
+2024-04-02 21:16:51,283 - betfairlightweight.streaming.stream - INFO - [MarketStream: 3001]: "MarketStream" created
+2024-04-02 21:16:51,593 - betfairlightweight.streaming.listener - INFO - [MarketStream: 2002]: SUCCESS (None connections available)
+2024-04-02 21:16:51,928 - betfairlightweight.streaming.listener - INFO - [MarketStream: 2001]: SUCCESS (None connections available)
+2024-04-02 21:16:52,212 - betfairlightweight.streaming.listener - INFO - [MarketStream: 3001]: connection_id: 104-020424111652-17245
+2024-04-02 21:16:52,525 - betfairlightweight.streaming.listener - ERROR - [MarketStream: 3002]: MAX_CONNECTION_LIMIT_EXCEEDED: You have exceeded your max connection limit which is: 2 connection(s).You currently have: 3 active connection(s).
+2024-04-02 21:16:52,526 - flumine.streams.marketstream - ERROR - MarketStream 3000 run error
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.10/dist-packages/flumine/streams/marketstream.py", line 36, in run
+    self.stream_id = self._stream.subscribe_to_markets(
+  File "/home/penjud/.local/lib/python3.10/site-packages/betfairlightweight/streaming/betfairstream.py", line 141, in subscribe_to_markets
+    self._send(message)
+  File "/home/penjud/.local/lib/python3.10/site-packages/betfairlightweight/streaming/betfairstream.py", line 287, in _send
+    self.authenticate()
+  File "/home/penjud/.local/lib/python3.10/site-packages/betfairlightweight/streaming/betfairstream.py", line 92, in authenticate
+    self._data(received_data)
+  File "/home/penjud/.local/lib/python3.10/site-packages/betfairlightweight/streaming/betfairstream.py", line 276, in _data
+    raise ListenerError(self.listener.connection_id, received_data)
+betfairlightweight.exceptions.ListenerError: connection_id: 104-020424111652-17245, data: {"op":"status","id":3002,"statusCode":"FAILURE","errorCode":"MAX_CONNECTION_LIMIT_EXCEEDED","errorMessage":"You have exceeded your max connection limit which is: 2 connection(s).You currently have: 3 active connection(s).","connectionClosed":true,"connectionId":"104-020424111652-17245"}
+
+2024-04-02 21:16:53,348 - betfairlightweight.streaming.stream - INFO - [MarketStream: 2001]: 1.226961853 added, 1 markets in cache
+2024-04-02 21:16:53,349 - betfairlightweight.streaming.stream - INFO - [MarketStream: 2001]: 1.226961874 added, 2 markets in cache
+2024-04-02 21:16:53,349 - betfairlightweight.streaming.stream - INFO - [MarketStream: 2001]: 1.226920001 added, 3 markets in cache
+2024-04-02 21:16:53,349 - betfairlightweight.streaming.stream - INFO - [MarketStream: 2001]: 1.226961860 added, 4 markets in cache
+2024-04-02 21:16:53,349 - betfairlightweight.streaming.stream - INFO - [MarketStream: 2001]: 1.226961896 added, 5 markets in cache
+2024-04-02 21:16:53,350 - betfairlightweight.streaming.stream - INFO - [MarketStream: 2001]: 1.226961867 added, 6 markets in cache
+2024-04-02 21:16:53,350 - betfairlightweight.streaming.stream - INFO - [MarketStream: 2001]: 1.226961888 added, 7 markets in cache
+2024-04-02 21:16:53,350 - betfairlightweight.streaming.stream - INFO - [MarketStream: 2001]: 1.226961881 added, 8 markets in cache
+2024-04-02 21:16:53,351 - betfairlightweight.streaming.stream - INFO - [MarketStream: 2001]: 1.226958085 added, 9 markets in cache
+2024-04-02 21:16:53,351 - betfairlightweight.streaming.stream - INFO - [MarketStream: 2001]: 1.226958061 added, 10 markets in cache
+2024-04-02 21:16:53,351 - betfairlightweight.streaming.stream - INFO - [MarketStream: 2001]: 1.226958045 added, 11 markets in cache
+2024-04-02 21:16:53,352 - betfairlightweight.streaming.stream - INFO - [MarketStream: 2001]: 1.226958037 added, 12 markets in cache
+2024-04-02 21:16:53,352 - betfairlightweight.streaming.stream - INFO - [MarketStream: 2001]: 1.226958053 added, 13 markets in cache
+2024-04-02 21:16:53,352 - betfairlightweight.streaming.stream - INFO - [MarketStream: 2001]: 1.226958093 added, 14 markets in cache
+2024-04-02 21:16:53,353 - betfairlightweight.streaming.stream - INFO - [MarketStream: 2001]: 1.226958077 added, 15 markets in cache
+2024-04-02 21:16:53,353 - betfairlightweight.streaming.stream - INFO - [MarketStream: 2001]: 1.226958069 added, 16 markets in cache
+2024-04-02 21:16:53,354 - betfairlightweight.streaming.stream - INFO - [MarketStream: 2001]: 1.226920834 added, 17 markets in cache
+2024-04-02 21:16:53,355 - betfairlightweight.streaming.stream - INFO - [MarketStream: 2001]: 1.226920837 added, 18 markets in cache
+2024-04-02 21:16:53,355 - betfairlightweight.streaming.stream - INFO - [MarketStream: 2001]: 1.226920840 added, 19 markets in cache
+2024-04-02 21:16:53,355 - betfairlightweight.streaming.stream - INFO - [MarketStream: 2001]: 1.227017114 added, 20 markets in cache
+2024-04-02 21:16:53,356 - betfairlightweight.streaming.stream - INFO - [MarketStream: 2001]: 1.226961080 added, 21 markets in cache
+2024-04-02 21:16:53,356 - betfairlightweight.streaming.stream - INFO - [MarketStream: 2001]: 1.226961089 added, 22 markets in cache
+2024-04-02 21:16:53,357 - betfairlightweight.streaming.stream - INFO - [MarketStream: 2001]: 1.226961044 added, 23 markets in cache
+2024-04-02 21:16:53,357 - betfairlightweight.streaming.stream - INFO - [MarketStream: 2001]: 1.227017122 added, 24 markets in cache
+2024-04-02 21:16:53,357 - betfairlightweight.streaming.stream - INFO - [MarketStream: 2001]: 1.226961298 added, 25 markets in cache
+2024-04-02 21:16:53,358 - betfairlightweight.streaming.stream - INFO - [MarketStream: 2001]: 1.227017138 added, 26 markets in cache
+2024-04-02 21:16:53,358 - betfairlightweight.streaming.stream - INFO - [MarketStream: 2001]: 1.226961107 added, 27 markets in cache
+2024-04-02 21:16:53,358 - betfairlightweight.streaming.stream - INFO - [MarketStream: 2001]: 1.226961062 added, 28 markets in cache
+2024-04-02 21:16:53,359 - betfairlightweight.streaming.stream - INFO - [MarketStream: 2001]: 1.226920831 added, 29 markets in cache
+2024-04-02 21:16:53,359 - betfairlightweight.streaming.stream - INFO - [MarketStream: 2001]: 1.227017130 added, 30 markets in cache
+2024-04-02 21:16:53,359 - betfairlightweight.streaming.stream - INFO - [MarketStream: 2001]: 1.226961071 added, 31 markets in cache
+2024-04-02 21:16:53,360 - betfairlightweight.streaming.stream - INFO - [MarketStream: 2001]: 1.226961235 added, 32 markets in cache
+2024-04-02 21:16:53,360 - betfairlightweight.streaming.stream - INFO - [MarketStream: 2001]: 1.226961284 added, 33 markets in cache
+2024-04-02 21:16:53,360 - betfairlightweight.streaming.stream - INFO - [MarketStream: 2001]: 1.226961242 added, 34 markets in cache
+2024-04-02 21:16:53,361 - betfairlightweight.streaming.stream - INFO - [MarketStream: 2001]: 1.226958630 added, 35 markets in cache
+2024-04-02 21:16:53,361 - betfairlightweight.streaming.stream - INFO - [MarketStream: 2001]: 1.226918842 added, 36 markets in cache
+2024-04-02 21:16:53,361 - betfairlightweight.streaming.stream - INFO - [MarketStream: 2001]: 1.226961277 added, 37 markets in cache
+2024-04-02 21:16:53,362 - betfairlightweight.streaming.stream - INFO - [MarketStream: 2001]: 1.226961263 added, 38 markets in cache
+2024-04-02 21:16:53,362 - betfairlightweight.streaming.stream - INFO - [MarketStream: 2001]: 1.226920828 added, 39 markets in cache
+2024-04-02 21:16:53,362 - betfairlightweight.streaming.stream - INFO - [MarketStream: 2001]: 1.226958651 added, 40 markets in cache
+2024-04-02 21:16:53,363 - betfairlightweight.streaming.stream - INFO - [MarketStream: 2001]: 1.226961098 added, 41 markets in cache
+2024-04-02 21:16:53,363 - betfairlightweight.streaming.stream - INFO - [MarketStream: 2001]: 1.226961053 added, 42 markets in cache
+2024-04-02 21:16:53,363 - betfairlightweight.streaming.stream - INFO - [MarketStream: 2001]: 1.226961291 added, 43 markets in cache
+2024-04-02 21:16:53,364 - betfairlightweight.streaming.stream - INFO - [MarketStream: 2001]: 1.226961249 added, 44 markets in cache
+2024-04-02 21:16:53,364 - betfairlightweight.streaming.stream - INFO - [MarketStream: 2001]: 1.226961270 added, 45 markets in cache
+2024-04-02 21:16:53,365 - betfairlightweight.streaming.stream - INFO - [MarketStream: 2001]: 1.226961256 added, 46 markets in cache
+2024-04-02 21:16:53,365 - betfairlightweight.streaming.stream - INFO - [MarketStream: 2001]: 1.226958637 added, 47 markets in cache
+2024-04-02 21:16:53,366 - betfairlightweight.streaming.stream - INFO - [MarketStream: 2001]: 1.226958644 added, 48 markets in cache
+2024-04-02 21:16:53,366 - betfairlightweight.streaming.stream - INFO - [MarketStream: 2001]: 1.226958623 added, 49 markets in cache
+2024-04-02 21:16:53,366 - betfairlightweight.streaming.stream - INFO - [MarketStream: 2001]: 1.226958616 added, 50 markets in cache
+2024-04-02 21:16:53,367 - betfairlightweight.streaming.stream - INFO - [MarketStream: 2001]: 1.226958609 added, 51 markets in cache
+2024-04-02 21:16:53,367 - betfairlightweight.streaming.stream - INFO - [MarketStream: 2001]: 51 mc added
+2024-04-02 21:16:53,367 - flumine.baseflumine - INFO - Adding: 1.226961853 to markets
+2024-04-02 21:16:53,368 - flumine.utils - CRITICAL - Unknown error FlatKashModel.check_market_book() takes 2 positional arguments but 3 were given in check_market_book (1.226961853)
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.10/dist-packages/flumine/utils.py", line 250, in call_strategy_error_handling
+    return func(market, update)
+TypeError: FlatKashModel.check_market_book() takes 2 positional arguments but 3 were given
+2024-04-02 21:16:53,368 - flumine.baseflumine - INFO - Adding: 1.226961874 to markets
+2024-04-02 21:16:53,368 - flumine.utils - CRITICAL - Unknown error FlatKashModel.check_market_book() takes 2 positional arguments but 3 were given in check_market_book (1.226961874)
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.10/dist-packages/flumine/utils.py", line 250, in call_strategy_error_handling
+    return func(market, update)
+TypeError: FlatKashModel.check_market_book() takes 2 positional arguments but 3 were given
+2024-04-02 21:16:53,368 - flumine.baseflumine - INFO - Adding: 1.226920001 to markets
+2024-04-02 21:16:53,368 - flumine.baseflumine - INFO - Adding: 1.226961860 to markets
+2024-04-02 21:16:53,368 - flumine.utils - CRITICAL - Unknown error FlatKashModel.check_market_book() takes 2 positional arguments but 3 were given in check_market_book (1.226961860)
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.10/dist-packages/flumine/utils.py", line 250, in call_strategy_error_handling
+    return func(market, update)
+TypeError: FlatKashModel.check_market_book() takes 2 positional arguments but 3 were given
+2024-04-02 21:16:53,368 - flumine.baseflumine - INFO - Adding: 1.226961896 to markets
+2024-04-02 21:16:53,368 - flumine.utils - CRITICAL - Unknown error FlatKashModel.check_market_book() takes 2 positional arguments but 3 were given in check_market_book (1.226961896)
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.10/dist-packages/flumine/utils.py", line 250, in call_strategy_error_handling
+    return func(market, update)
+TypeError: FlatKashModel.check_market_book() takes 2 positional arguments but 3 were given
+2024-04-02 21:16:53,368 - flumine.baseflumine - INFO - Adding: 1.226961867 to markets
+2024-04-02 21:16:53,368 - flumine.utils - CRITICAL - Unknown error FlatKashModel.check_market_book() takes 2 positional arguments but 3 were given in check_market_book (1.226961867)
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.10/dist-packages/flumine/utils.py", line 250, in call_strategy_error_handling
+    return func(market, update)
+TypeError: FlatKashModel.check_market_book() takes 2 positional arguments but 3 were given
+2024-04-02 21:16:53,368 - flumine.baseflumine - INFO - Adding: 1.226961888 to markets
+2024-04-02 21:16:53,368 - flumine.utils - CRITICAL - Unknown error FlatKashModel.check_market_book() takes 2 positional arguments but 3 were given in check_market_book (1.226961888)
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.10/dist-packages/flumine/utils.py", line 250, in call_strategy_error_handling
+    return func(market, update)
+TypeError: FlatKashModel.check_market_book() takes 2 positional arguments but 3 were given
+2024-04-02 21:16:53,368 - flumine.baseflumine - INFO - Adding: 1.226961881 to markets
+2024-04-02 21:16:53,368 - flumine.utils - CRITICAL - Unknown error FlatKashModel.check_market_book() takes 2 positional arguments but 3 were given in check_market_book (1.226961881)
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.10/dist-packages/flumine/utils.py", line 250, in call_strategy_error_handling
+    return func(market, update)
+TypeError: FlatKashModel.check_market_book() takes 2 positional arguments but 3 were given
+2024-04-02 21:16:53,368 - flumine.baseflumine - INFO - Adding: 1.226958085 to markets
+2024-04-02 21:16:53,368 - flumine.utils - CRITICAL - Unknown error FlatKashModel.check_market_book() takes 2 positional arguments but 3 were given in check_market_book (1.226958085)
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.10/dist-packages/flumine/utils.py", line 250, in call_strategy_error_handling
+    return func(market, update)
+TypeError: FlatKashModel.check_market_book() takes 2 positional arguments but 3 were given
+2024-04-02 21:16:53,368 - flumine.baseflumine - INFO - Adding: 1.226958061 to markets
+2024-04-02 21:16:53,368 - flumine.utils - CRITICAL - Unknown error FlatKashModel.check_market_book() takes 2 positional arguments but 3 were given in check_market_book (1.226958061)
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.10/dist-packages/flumine/utils.py", line 250, in call_strategy_error_handling
+    return func(market, update)
+TypeError: FlatKashModel.check_market_book() takes 2 positional arguments but 3 were given
+2024-04-02 21:16:53,368 - flumine.baseflumine - INFO - Adding: 1.226958045 to markets
+2024-04-02 21:16:53,368 - flumine.utils - CRITICAL - Unknown error FlatKashModel.check_market_book() takes 2 positional arguments but 3 were given in check_market_book (1.226958045)
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.10/dist-packages/flumine/utils.py", line 250, in call_strategy_error_handling
+    return func(market, update)
+TypeError: FlatKashModel.check_market_book() takes 2 positional arguments but 3 were given
+2024-04-02 21:16:53,368 - flumine.baseflumine - INFO - Adding: 1.226958037 to markets
+2024-04-02 21:16:53,368 - flumine.utils - CRITICAL - Unknown error FlatKashModel.check_market_book() takes 2 positional arguments but 3 were given in check_market_book (1.226958037)
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.10/dist-packages/flumine/utils.py", line 250, in call_strategy_error_handling
+    return func(market, update)
+TypeError: FlatKashModel.check_market_book() takes 2 positional arguments but 3 were given
+2024-04-02 21:16:53,368 - flumine.baseflumine - INFO - Adding: 1.226958053 to markets
+2024-04-02 21:16:53,368 - flumine.utils - CRITICAL - Unknown error FlatKashModel.check_market_book() takes 2 positional arguments but 3 were given in check_market_book (1.226958053)
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.10/dist-packages/flumine/utils.py", line 250, in call_strategy_error_handling
+    return func(market, update)
+TypeError: FlatKashModel.check_market_book() takes 2 positional arguments but 3 were given
+2024-04-02 21:16:53,368 - flumine.baseflumine - INFO - Adding: 1.226958093 to markets
+2024-04-02 21:16:53,369 - flumine.utils - CRITICAL - Unknown error FlatKashModel.check_market_book() takes 2 positional arguments but 3 were given in check_market_book (1.226958093)
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.10/dist-packages/flumine/utils.py", line 250, in call_strategy_error_handling
+    return func(market, update)
+TypeError: FlatKashModel.check_market_book() takes 2 positional arguments but 3 were given
+2024-04-02 21:16:53,369 - flumine.baseflumine - INFO - Adding: 1.226958077 to markets
+2024-04-02 21:16:53,369 - flumine.utils - CRITICAL - Unknown error FlatKashModel.check_market_book() takes 2 positional arguments but 3 were given in check_market_book (1.226958077)
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.10/dist-packages/flumine/utils.py", line 250, in call_strategy_error_handling
+    return func(market, update)
+TypeError: FlatKashModel.check_market_book() takes 2 positional arguments but 3 were given
+2024-04-02 21:16:53,369 - flumine.baseflumine - INFO - Adding: 1.226958069 to markets
+2024-04-02 21:16:53,369 - flumine.utils - CRITICAL - Unknown error FlatKashModel.check_market_book() takes 2 positional arguments but 3 were given in check_market_book (1.226958069)
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.10/dist-packages/flumine/utils.py", line 250, in call_strategy_error_handling
+    return func(market, update)
+TypeError: FlatKashModel.check_market_book() takes 2 positional arguments but 3 were given
+2024-04-02 21:16:53,369 - flumine.baseflumine - INFO - Adding: 1.226920834 to markets
+2024-04-02 21:16:53,369 - flumine.utils - CRITICAL - Unknown error FlatKashModel.check_market_book() takes 2 positional arguments but 3 were given in check_market_book (1.226920834)
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.10/dist-packages/flumine/utils.py", line 250, in call_strategy_error_handling
+    return func(market, update)
+TypeError: FlatKashModel.check_market_book() takes 2 positional arguments but 3 were given
+2024-04-02 21:16:53,369 - flumine.baseflumine - INFO - Adding: 1.226920837 to markets
+2024-04-02 21:16:53,369 - flumine.utils - CRITICAL - Unknown error FlatKashModel.check_market_book() takes 2 positional arguments but 3 were given in check_market_book (1.226920837)
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.10/dist-packages/flumine/utils.py", line 250, in call_strategy_error_handling
+    return func(market, update)
+TypeError: FlatKashModel.check_market_book() takes 2 positional arguments but 3 were given
+2024-04-02 21:16:53,369 - flumine.baseflumine - INFO - Adding: 1.226920840 to markets
+2024-04-02 21:16:53,369 - flumine.utils - CRITICAL - Unknown error FlatKashModel.check_market_book() takes 2 positional arguments but 3 were given in check_market_book (1.226920840)
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.10/dist-packages/flumine/utils.py", line 250, in call_strategy_error_handling
+    return func(market, update)
+TypeError: FlatKashModel.check_market_book() takes 2 positional arguments but 3 were given
+2024-04-02 21:16:53,369 - flumine.baseflumine - INFO - Adding: 1.227017114 to markets
+2024-04-02 21:16:53,369 - flumine.utils - CRITICAL - Unknown error FlatKashModel.check_market_book() takes 2 positional arguments but 3 were given in check_market_book (1.227017114)
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.10/dist-packages/flumine/utils.py", line 250, in call_strategy_error_handling
+    return func(market, update)
+TypeError: FlatKashModel.check_market_book() takes 2 positional arguments but 3 were given
+2024-04-02 21:16:53,369 - flumine.baseflumine - INFO - Adding: 1.226961080 to markets
+2024-04-02 21:16:53,369 - flumine.utils - CRITICAL - Unknown error FlatKashModel.check_market_book() takes 2 positional arguments but 3 were given in check_market_book (1.226961080)
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.10/dist-packages/flumine/utils.py", line 250, in call_strategy_error_handling
+    return func(market, update)
+TypeError: FlatKashModel.check_market_book() takes 2 positional arguments but 3 were given
+2024-04-02 21:16:53,369 - flumine.baseflumine - INFO - Adding: 1.226961089 to markets
+2024-04-02 21:16:53,369 - flumine.utils - CRITICAL - Unknown error FlatKashModel.check_market_book() takes 2 positional arguments but 3 were given in check_market_book (1.226961089)
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.10/dist-packages/flumine/utils.py", line 250, in call_strategy_error_handling
+    return func(market, update)
+TypeError: FlatKashModel.check_market_book() takes 2 positional arguments but 3 were given
+2024-04-02 21:16:53,369 - flumine.baseflumine - INFO - Adding: 1.226961044 to markets
+2024-04-02 21:16:53,369 - flumine.utils - CRITICAL - Unknown error FlatKashModel.check_market_book() takes 2 positional arguments but 3 were given in check_market_book (1.226961044)
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.10/dist-packages/flumine/utils.py", line 250, in call_strategy_error_handling
+    return func(market, update)
+TypeError: FlatKashModel.check_market_book() takes 2 positional arguments but 3 were given
+2024-04-02 21:16:53,369 - flumine.baseflumine - INFO - Adding: 1.227017122 to markets
+2024-04-02 21:16:53,369 - flumine.utils - CRITICAL - Unknown error FlatKashModel.check_market_book() takes 2 positional arguments but 3 were given in check_market_book (1.227017122)
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.10/dist-packages/flumine/utils.py", line 250, in call_strategy_error_handling
+    return func(market, update)
+TypeError: FlatKashModel.check_market_book() takes 2 positional arguments but 3 were given
+2024-04-02 21:16:53,369 - flumine.baseflumine - INFO - Adding: 1.226961298 to markets
+2024-04-02 21:16:53,369 - flumine.utils - CRITICAL - Unknown error FlatKashModel.check_market_book() takes 2 positional arguments but 3 were given in check_market_book (1.226961298)
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.10/dist-packages/flumine/utils.py", line 250, in call_strategy_error_handling
+    return func(market, update)
+TypeError: FlatKashModel.check_market_book() takes 2 positional arguments but 3 were given
+2024-04-02 21:16:53,369 - flumine.baseflumine - INFO - Adding: 1.227017138 to markets
+2024-04-02 21:16:53,369 - flumine.utils - CRITICAL - Unknown error FlatKashModel.check_market_book() takes 2 positional arguments but 3 were given in check_market_book (1.227017138)
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.10/dist-packages/flumine/utils.py", line 250, in call_strategy_error_handling
+    return func(market, update)
+TypeError: FlatKashModel.check_market_book() takes 2 positional arguments but 3 were given
+2024-04-02 21:16:53,369 - flumine.baseflumine - INFO - Adding: 1.226961107 to markets
+2024-04-02 21:16:53,369 - flumine.utils - CRITICAL - Unknown error FlatKashModel.check_market_book() takes 2 positional arguments but 3 were given in check_market_book (1.226961107)
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.10/dist-packages/flumine/utils.py", line 250, in call_strategy_error_handling
+    return func(market, update)
+TypeError: FlatKashModel.check_market_book() takes 2 positional arguments but 3 were given
+2024-04-02 21:16:53,369 - flumine.baseflumine - INFO - Adding: 1.226961062 to markets
+2024-04-02 21:16:53,369 - flumine.utils - CRITICAL - Unknown error FlatKashModel.check_market_book() takes 2 positional arguments but 3 were given in check_market_book (1.226961062)
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.10/dist-packages/flumine/utils.py", line 250, in call_strategy_error_handling
+    return func(market, update)
+TypeError: FlatKashModel.check_market_book() takes 2 positional arguments but 3 were given
+2024-04-02 21:16:53,369 - flumine.baseflumine - INFO - Adding: 1.226920831 to markets
+2024-04-02 21:16:53,369 - flumine.baseflumine - INFO - Adding: 1.227017130 to markets
+2024-04-02 21:16:53,369 - flumine.utils - CRITICAL - Unknown error FlatKashModel.check_market_book() takes 2 positional arguments but 3 were given in check_market_book (1.227017130)
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.10/dist-packages/flumine/utils.py", line 250, in call_strategy_error_handling
+    return func(market, update)
+TypeError: FlatKashModel.check_market_book() takes 2 positional arguments but 3 were given
+2024-04-02 21:16:53,369 - flumine.baseflumine - INFO - Adding: 1.226961071 to markets
+2024-04-02 21:16:53,369 - flumine.utils - CRITICAL - Unknown error FlatKashModel.check_market_book() takes 2 positional arguments but 3 were given in check_market_book (1.226961071)
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.10/dist-packages/flumine/utils.py", line 250, in call_strategy_error_handling
+    return func(market, update)
+TypeError: FlatKashModel.check_market_book() takes 2 positional arguments but 3 were given
+2024-04-02 21:16:53,369 - flumine.baseflumine - INFO - Adding: 1.226961235 to markets
+2024-04-02 21:16:53,370 - flumine.utils - CRITICAL - Unknown error FlatKashModel.check_market_book() takes 2 positional arguments but 3 were given in check_market_book (1.226961235)
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.10/dist-packages/flumine/utils.py", line 250, in call_strategy_error_handling
+    return func(market, update)
+TypeError: FlatKashModel.check_market_book() takes 2 positional arguments but 3 were given
+2024-04-02 21:16:53,370 - flumine.baseflumine - INFO - Adding: 1.226961284 to markets
+2024-04-02 21:16:53,370 - flumine.utils - CRITICAL - Unknown error FlatKashModel.check_market_book() takes 2 positional arguments but 3 were given in check_market_book (1.226961284)
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.10/dist-packages/flumine/utils.py", line 250, in call_strategy_error_handling
+    return func(market, update)
+TypeError: FlatKashModel.check_market_book() takes 2 positional arguments but 3 were given
+2024-04-02 21:16:53,370 - flumine.baseflumine - INFO - Adding: 1.226961242 to markets
+2024-04-02 21:16:53,370 - flumine.utils - CRITICAL - Unknown error FlatKashModel.check_market_book() takes 2 positional arguments but 3 were given in check_market_book (1.226961242)
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.10/dist-packages/flumine/utils.py", line 250, in call_strategy_error_handling
+    return func(market, update)
+TypeError: FlatKashModel.check_market_book() takes 2 positional arguments but 3 were given
+2024-04-02 21:16:53,370 - flumine.baseflumine - INFO - Adding: 1.226958630 to markets
+2024-04-02 21:16:53,370 - flumine.utils - CRITICAL - Unknown error FlatKashModel.check_market_book() takes 2 positional arguments but 3 were given in check_market_book (1.226958630)
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.10/dist-packages/flumine/utils.py", line 250, in call_strategy_error_handling
+    return func(market, update)
+TypeError: FlatKashModel.check_market_book() takes 2 positional arguments but 3 were given
+2024-04-02 21:16:53,370 - flumine.baseflumine - INFO - Adding: 1.226918842 to markets
+2024-04-02 21:16:53,370 - flumine.baseflumine - INFO - Adding: 1.226961277 to markets
+2024-04-02 21:16:53,370 - flumine.utils - CRITICAL - Unknown error FlatKashModel.check_market_book() takes 2 positional arguments but 3 were given in check_market_book (1.226961277)
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.10/dist-packages/flumine/utils.py", line 250, in call_strategy_error_handling
+    return func(market, update)
+TypeError: FlatKashModel.check_market_book() takes 2 positional arguments but 3 were given
+2024-04-02 21:16:53,370 - flumine.baseflumine - INFO - Adding: 1.226961263 to markets
+2024-04-02 21:16:53,370 - flumine.utils - CRITICAL - Unknown error FlatKashModel.check_market_book() takes 2 positional arguments but 3 were given in check_market_book (1.226961263)
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.10/dist-packages/flumine/utils.py", line 250, in call_strategy_error_handling
+    return func(market, update)
+TypeError: FlatKashModel.check_market_book() takes 2 positional arguments but 3 were given
+2024-04-02 21:16:53,370 - flumine.baseflumine - INFO - Adding: 1.226920828 to markets
+2024-04-02 21:16:53,370 - flumine.baseflumine - INFO - Adding: 1.226958651 to markets
+2024-04-02 21:16:53,370 - flumine.utils - CRITICAL - Unknown error FlatKashModel.check_market_book() takes 2 positional arguments but 3 were given in check_market_book (1.226958651)
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.10/dist-packages/flumine/utils.py", line 250, in call_strategy_error_handling
+    return func(market, update)
+TypeError: FlatKashModel.check_market_book() takes 2 positional arguments but 3 were given
+2024-04-02 21:16:53,370 - flumine.baseflumine - INFO - Adding: 1.226961098 to markets
+2024-04-02 21:16:53,370 - flumine.utils - CRITICAL - Unknown error FlatKashModel.check_market_book() takes 2 positional arguments but 3 were given in check_market_book (1.226961098)
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.10/dist-packages/flumine/utils.py", line 250, in call_strategy_error_handling
+    return func(market, update)
+TypeError: FlatKashModel.check_market_book() takes 2 positional arguments but 3 were given
+2024-04-02 21:16:53,370 - flumine.baseflumine - INFO - Adding: 1.226961053 to markets
+2024-04-02 21:16:53,370 - flumine.utils - CRITICAL - Unknown error FlatKashModel.check_market_book() takes 2 positional arguments but 3 were given in check_market_book (1.226961053)
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.10/dist-packages/flumine/utils.py", line 250, in call_strategy_error_handling
+    return func(market, update)
+TypeError: FlatKashModel.check_market_book() takes 2 positional arguments but 3 were given
+2024-04-02 21:16:53,370 - flumine.baseflumine - INFO - Adding: 1.226961291 to markets
+2024-04-02 21:16:53,370 - flumine.utils - CRITICAL - Unknown error FlatKashModel.check_market_book() takes 2 positional arguments but 3 were given in check_market_book (1.226961291)
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.10/dist-packages/flumine/utils.py", line 250, in call_strategy_error_handling
+    return func(market, update)
+TypeError: FlatKashModel.check_market_book() takes 2 positional arguments but 3 were given
+2024-04-02 21:16:53,370 - flumine.baseflumine - INFO - Adding: 1.226961249 to markets
+2024-04-02 21:16:53,370 - flumine.utils - CRITICAL - Unknown error FlatKashModel.check_market_book() takes 2 positional arguments but 3 were given in check_market_book (1.226961249)
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.10/dist-packages/flumine/utils.py", line 250, in call_strategy_error_handling
+    return func(market, update)
+TypeError: FlatKashModel.check_market_book() takes 2 positional arguments but 3 were given
+2024-04-02 21:16:53,370 - flumine.baseflumine - INFO - Adding: 1.226961270 to markets
+2024-04-02 21:16:53,370 - flumine.utils - CRITICAL - Unknown error FlatKashModel.check_market_book() takes 2 positional arguments but 3 were given in check_market_book (1.226961270)
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.10/dist-packages/flumine/utils.py", line 250, in call_strategy_error_handling
+    return func(market, update)
+TypeError: FlatKashModel.check_market_book() takes 2 positional arguments but 3 were given
+2024-04-02 21:16:53,370 - flumine.baseflumine - INFO - Adding: 1.226961256 to markets
+2024-04-02 21:16:53,370 - flumine.utils - CRITICAL - Unknown error FlatKashModel.check_market_book() takes 2 positional arguments but 3 were given in check_market_book (1.226961256)
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.10/dist-packages/flumine/utils.py", line 250, in call_strategy_error_handling
+    return func(market, update)
+TypeError: FlatKashModel.check_market_book() takes 2 positional arguments but 3 were given
+2024-04-02 21:16:53,370 - flumine.baseflumine - INFO - Adding: 1.226958637 to markets
+2024-04-02 21:16:53,370 - flumine.utils - CRITICAL - Unknown error FlatKashModel.check_market_book() takes 2 positional arguments but 3 were given in check_market_book (1.226958637)
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.10/dist-packages/flumine/utils.py", line 250, in call_strategy_error_handling
+    return func(market, update)
+TypeError: FlatKashModel.check_market_book() takes 2 positional arguments but 3 were given
+2024-04-02 21:16:53,370 - flumine.baseflumine - INFO - Adding: 1.226958644 to markets
+2024-04-02 21:16:53,370 - flumine.utils - CRITICAL - Unknown error FlatKashModel.check_market_book() takes 2 positional arguments but 3 were given in check_market_book (1.226958644)
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.10/dist-packages/flumine/utils.py", line 250, in call_strategy_error_handling
+    return func(market, update)
+TypeError: FlatKashModel.check_market_book() takes 2 positional arguments but 3 were given
+2024-04-02 21:16:53,370 - flumine.baseflumine - INFO - Adding: 1.226958623 to markets
+2024-04-02 21:16:53,370 - flumine.utils - CRITICAL - Unknown error FlatKashModel.check_market_book() takes 2 positional arguments but 3 were given in check_market_book (1.226958623)
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.10/dist-packages/flumine/utils.py", line 250, in call_strategy_error_handling
+    return func(market, update)
+TypeError: FlatKashModel.check_market_book() takes 2 positional arguments but 3 were given
+2024-04-02 21:16:53,370 - flumine.baseflumine - INFO - Adding: 1.226958616 to markets
+2024-04-02 21:16:53,371 - flumine.utils - CRITICAL - Unknown error FlatKashModel.check_market_book() takes 2 positional arguments but 3 were given in check_market_book (1.226958616)
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.10/dist-packages/flumine/utils.py", line 250, in call_strategy_error_handling
+    return func(market, update)
+TypeError: FlatKashModel.check_market_book() takes 2 positional arguments but 3 were given
+2024-04-02 21:16:53,371 - flumine.baseflumine - INFO - Adding: 1.226958609 to markets
+2024-04-02 21:16:53,371 - flumine.utils - CRITICAL - Unknown error FlatKashModel.check_market_book() takes 2 positional arguments but 3 were given in check_market_book (1.226958609)
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.10/dist-packages/flumine/utils.py", line 250, in call_strategy_error_handling
+    return func(market, update)
+TypeError: FlatKashModel.check_market_book() takes 2 positional arguments but 3 were given
+2024-04-02 21:16:53,371 - flumine.markets.market - INFO - Market 1.226920001 closed
+2024-04-02 21:16:53,371 - flumine.baseflumine - INFO - Market closed
+2024-04-02 21:16:53,371 - flumine.markets.market - INFO - Market 1.226920831 closed
+2024-04-02 21:16:53,371 - flumine.baseflumine - INFO - Market closed
+2024-04-02 21:16:53,371 - flumine.markets.market - INFO - Market 1.226918842 closed
+2024-04-02 21:16:53,371 - flumine.baseflumine - INFO - Market closed
+2024-04-02 21:16:53,371 - flumine.markets.market - INFO - Market 1.226920828 closed
+2024-04-02 21:16:53,371 - flumine.baseflumine - INFO - Market closed
+2024-04-02 21:16:54,528 - flumine.streams.marketstream - INFO - Starting MarketStream 3000
+2024-04-02 21:16:54,529 - betfairlightweight.streaming.listener - INFO - [Register: 3001]: marketSubscription
+2024-04-02 21:16:54,529 - betfairlightweight.streaming.listener - WARNING - [Listener: 3001]: stream already registered, replacing data
+2024-04-02 21:16:54,529 - betfairlightweight.streaming.stream - INFO - [MarketStream: 3001]: "MarketStream" created
+2024-04-02 21:16:55,475 - betfairlightweight.streaming.listener - INFO - [MarketStream: 3001]: connection_id: 101-020424111655-18610
+2024-04-02 21:16:55,780 - betfairlightweight.streaming.listener - ERROR - [MarketStream: 3002]: MAX_CONNECTION_LIMIT_EXCEEDED: You have exceeded your max connection limit which is: 2 connection(s).You currently have: 3 active connection(s).
+2024-04-02 21:16:55,780 - flumine.streams.marketstream - ERROR - MarketStream 3000 run error
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.10/dist-packages/flumine/streams/marketstream.py", line 36, in run
+    self.stream_id = self._stream.subscribe_to_markets(
+  File "/home/penjud/.local/lib/python3.10/site-packages/betfairlightweight/streaming/betfairstream.py", line 141, in subscribe_to_markets
+    self._send(message)
+  File "/home/penjud/.local/lib/python3.10/site-packages/betfairlightweight/streaming/betfairstream.py", line 287, in _send
+    self.authenticate()
+  File "/home/penjud/.local/lib/python3.10/site-packages/betfairlightweight/streaming/betfairstream.py", line 92, in authenticate
+    self._data(received_data)
+  File "/home/penjud/.local/lib/python3.10/site-packages/betfairlightweight/streaming/betfairstream.py", line 276, in _data
+    raise ListenerError(self.listener.connection_id, received_data)
+betfairlightweight.exceptions.ListenerError: connection_id: 101-020424111655-18610, data: {"op":"status","id":3002,"statusCode":"FAILURE","errorCode":"MAX_CONNECTION_LIMIT_EXCEEDED","errorMessage":"You have exceeded your max connection limit which is: 2 connection(s).You currently have: 3 active connection(s).","connectionClosed":true,"connectionId":"101-020424111655-18610"}
+
+2024-04-02 21:16:56,338 - flumine.worker - INFO - 1.226920001: 0 cleared orders found, more available: False
+2024-04-02 21:16:56,342 - flumine.baseflumine - INFO - Market cleared
+2024-04-02 21:16:56,362 - flumine.baseflumine - INFO - Created marketCatalogue for 1.226920834
+2024-04-02 21:16:56,362 - flumine.baseflumine - INFO - Created marketCatalogue for 1.226920837
+2024-04-02 21:16:56,363 - flumine.baseflumine - INFO - Created marketCatalogue for 1.226920840
+2024-04-02 21:16:56,363 - flumine.baseflumine - INFO - Created marketCatalogue for 1.226961044
+2024-04-02 21:16:56,363 - flumine.baseflumine - INFO - Created marketCatalogue for 1.226958037
+2024-04-02 21:16:56,363 - flumine.baseflumine - INFO - Created marketCatalogue for 1.226958045
+2024-04-02 21:16:56,364 - flumine.baseflumine - INFO - Created marketCatalogue for 1.226958053
+2024-04-02 21:16:56,364 - flumine.baseflumine - INFO - Created marketCatalogue for 1.226958061
+2024-04-02 21:16:56,364 - flumine.baseflumine - INFO - Created marketCatalogue for 1.226961080
+2024-04-02 21:16:56,364 - flumine.baseflumine - INFO - Created marketCatalogue for 1.226958069
+2024-04-02 21:16:56,364 - flumine.baseflumine - INFO - Created marketCatalogue for 1.226961089
+2024-04-02 21:16:56,364 - flumine.baseflumine - INFO - Created marketCatalogue for 1.226958077
+2024-04-02 21:16:56,364 - flumine.baseflumine - INFO - Created marketCatalogue for 1.226961853
+2024-04-02 21:16:56,364 - flumine.baseflumine - INFO - Created marketCatalogue for 1.226958085
+2024-04-02 21:16:56,364 - flumine.baseflumine - INFO - Created marketCatalogue for 1.226961860
+2024-04-02 21:16:56,364 - flumine.baseflumine - INFO - Created marketCatalogue for 1.226958093
+2024-04-02 21:16:56,364 - flumine.baseflumine - INFO - Created marketCatalogue for 1.226961867
+2024-04-02 21:16:56,364 - flumine.baseflumine - INFO - Created marketCatalogue for 1.226961298
+2024-04-02 21:16:56,364 - flumine.baseflumine - INFO - Created marketCatalogue for 1.226961874
+2024-04-02 21:16:56,364 - flumine.baseflumine - INFO - Created marketCatalogue for 1.226961881
+2024-04-02 21:16:56,364 - flumine.baseflumine - INFO - Created marketCatalogue for 1.226961888
+2024-04-02 21:16:56,364 - flumine.baseflumine - INFO - Created marketCatalogue for 1.226961896
+2024-04-02 21:16:56,364 - flumine.baseflumine - INFO - Created marketCatalogue for 1.227017138
+2024-04-02 21:16:56,364 - flumine.baseflumine - INFO - Created marketCatalogue for 1.227017122
+2024-04-02 21:16:56,364 - flumine.baseflumine - INFO - Created marketCatalogue for 1.227017114
+2024-04-02 21:16:56,850 - flumine.worker - INFO - Client update account details
+2024-04-02 21:16:56,956 - flumine.baseflumine - INFO - Created marketCatalogue for 1.226961235
+2024-04-02 21:16:56,956 - flumine.baseflumine - INFO - Created marketCatalogue for 1.226961242
+2024-04-02 21:16:56,957 - flumine.baseflumine - INFO - Created marketCatalogue for 1.226961053
+2024-04-02 21:16:56,957 - flumine.baseflumine - INFO - Created marketCatalogue for 1.226961249
+2024-04-02 21:16:56,957 - flumine.baseflumine - INFO - Created marketCatalogue for 1.226958609
+2024-04-02 21:16:56,957 - flumine.baseflumine - INFO - Created marketCatalogue for 1.226961062
+2024-04-02 21:16:56,957 - flumine.baseflumine - INFO - Created marketCatalogue for 1.226961256
+2024-04-02 21:16:56,957 - flumine.baseflumine - INFO - Created marketCatalogue for 1.226958616
+2024-04-02 21:16:56,957 - flumine.baseflumine - INFO - Created marketCatalogue for 1.226961071
+2024-04-02 21:16:56,957 - flumine.baseflumine - INFO - Created marketCatalogue for 1.226961263
+2024-04-02 21:16:56,957 - flumine.baseflumine - INFO - Created marketCatalogue for 1.226958623
+2024-04-02 21:16:56,957 - flumine.baseflumine - INFO - Created marketCatalogue for 1.226961270
+2024-04-02 21:16:56,957 - flumine.baseflumine - INFO - Created marketCatalogue for 1.226958630
+2024-04-02 21:16:56,957 - flumine.baseflumine - INFO - Created marketCatalogue for 1.226961277
+2024-04-02 21:16:56,958 - flumine.baseflumine - INFO - Created marketCatalogue for 1.226958637
+2024-04-02 21:16:56,958 - flumine.baseflumine - INFO - Created marketCatalogue for 1.226961098
+2024-04-02 21:16:56,958 - flumine.baseflumine - INFO - Created marketCatalogue for 1.226961284
+2024-04-02 21:16:56,958 - flumine.baseflumine - INFO - Created marketCatalogue for 1.226958644
+2024-04-02 21:16:56,958 - flumine.baseflumine - INFO - Created marketCatalogue for 1.226961107
+2024-04-02 21:16:56,958 - flumine.baseflumine - INFO - Created marketCatalogue for 1.226961291
+2024-04-02 21:16:56,958 - flumine.baseflumine - INFO - Created marketCatalogue for 1.226958651
+2024-04-02 21:16:56,958 - flumine.baseflumine - INFO - Created marketCatalogue for 1.227017130
+2024-04-02 21:16:57,561 - flumine.worker - INFO - 1.226920831: 0 cleared orders found, more available: False
+2024-04-02 21:16:57,563 - flumine.baseflumine - INFO - Market cleared
+2024-04-02 21:16:57,783 - flumine.streams.marketstream - INFO - Starting MarketStream 3000
+2024-04-02 21:16:57,783 - betfairlightweight.streaming.listener - INFO - [Register: 3001]: marketSubscription
+2024-04-02 21:16:57,784 - betfairlightweight.streaming.listener - WARNING - [Listener: 3001]: stream already registered, replacing data
+2024-04-02 21:16:57,784 - betfairlightweight.streaming.stream - INFO - [MarketStream: 3001]: "MarketStream" created
+2024-04-02 21:16:58,726 - betfairlightweight.streaming.listener - INFO - [MarketStream: 3001]: connection_id: 102-020424111658-18124
+2024-04-02 21:16:58,808 - flumine.worker - INFO - 1.226918842: 0 cleared orders found, more available: False
+2024-04-02 21:16:58,809 - flumine.baseflumine - INFO - Market cleared
+2024-04-02 21:16:59,046 - betfairlightweight.streaming.listener - ERROR - [MarketStream: 3002]: MAX_CONNECTION_LIMIT_EXCEEDED: You have exceeded your max connection limit which is: 2 connection(s).You currently have: 3 active connection(s).
+2024-04-02 21:16:59,047 - flumine.streams.marketstream - ERROR - MarketStream 3000 run error
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.10/dist-packages/flumine/streams/marketstream.py", line 36, in run
+    self.stream_id = self._stream.subscribe_to_markets(
+  File "/home/penjud/.local/lib/python3.10/site-packages/betfairlightweight/streaming/betfairstream.py", line 141, in subscribe_to_markets
+    self._send(message)
+  File "/home/penjud/.local/lib/python3.10/site-packages/betfairlightweight/streaming/betfairstream.py", line 287, in _send
+    self.authenticate()
+  File "/home/penjud/.local/lib/python3.10/site-packages/betfairlightweight/streaming/betfairstream.py", line 92, in authenticate
+    self._data(received_data)
+  File "/home/penjud/.local/lib/python3.10/site-packages/betfairlightweight/streaming/betfairstream.py", line 276, in _data
+    raise ListenerError(self.listener.connection_id, received_data)
+betfairlightweight.exceptions.ListenerError: connection_id: 102-020424111658-18124, data: {"op":"status","id":3002,"statusCode":"FAILURE","errorCode":"MAX_CONNECTION_LIMIT_EXCEEDED","errorMessage":"You have exceeded your max connection limit which is: 2 connection(s).You currently have: 3 active connection(s).","connectionClosed":true,"connectionId":"102-020424111658-18124"}
+
+2024-04-02 21:16:59,992 - flumine.worker - INFO - 1.226920828: 0 cleared orders found, more available: False
+2024-04-02 21:16:59,994 - flumine.baseflumine - INFO - Market cleared
+2024-04-02 21:17:03,048 - flumine.streams.marketstream - INFO - Starting MarketStream 3000
+2024-04-02 21:17:03,049 - betfairlightweight.streaming.listener - INFO - [Register: 3001]: marketSubscription
+2024-04-02 21:17:03,049 - betfairlightweight.streaming.listener - WARNING - [Listener: 3001]: stream already registered, replacing data
+2024-04-02 21:17:03,049 - betfairlightweight.streaming.stream - INFO - [MarketStream: 3001]: "MarketStream" created
+2024-04-02 21:17:04,017 - betfairlightweight.streaming.listener - INFO - [MarketStream: 3001]: connection_id: 105-020424111703-17013
+2024-04-02 21:17:04,406 - betfairlightweight.streaming.listener - ERROR - [MarketStream: 3002]: MAX_CONNECTION_LIMIT_EXCEEDED: You have exceeded your max connection limit which is: 2 connection(s).You currently have: 3 active connection(s).
+2024-04-02 21:17:04,406 - flumine.streams.marketstream - ERROR - MarketStream 3000 run error
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.10/dist-packages/flumine/streams/marketstream.py", line 36, in run
+    self.stream_id = self._stream.subscribe_to_markets(
+  File "/home/penjud/.local/lib/python3.10/site-packages/betfairlightweight/streaming/betfairstream.py", line 141, in subscribe_to_markets
+    self._send(message)
+  File "/home/penjud/.local/lib/python3.10/site-packages/betfairlightweight/streaming/betfairstream.py", line 287, in _send
+    self.authenticate()
+  File "/home/penjud/.local/lib/python3.10/site-packages/betfairlightweight/streaming/betfairstream.py", line 92, in authenticate
+    self._data(received_data)
+  File "/home/penjud/.local/lib/python3.10/site-packages/betfairlightweight/streaming/betfairstream.py", line 276, in _data
+    raise ListenerError(self.listener.connection_id, received_data)
+betfairlightweight.exceptions.ListenerError: connection_id: 105-020424111703-17013, data: {"op":"status","id":3002,"statusCode":"FAILURE","errorCode":"MAX_CONNECTION_LIMIT_EXCEEDED","errorMessage":"You have exceeded your max connection limit which is: 2 connection(s).You currently have: 3 active connection(s).","connectionClosed":true,"connectionId":"105-020424111703-17013"}
+
+2024-04-02 21:17:12,412 - flumine.streams.marketstream - INFO - Starting MarketStream 3000
+2024-04-02 21:17:12,412 - betfairlightweight.streaming.listener - INFO - [Register: 3001]: marketSubscription
+2024-04-02 21:17:12,412 - betfairlightweight.streaming.listener - WARNING - [Listener: 3001]: stream already registered, replacing data
+2024-04-02 21:17:12,412 - betfairlightweight.streaming.stream - INFO - [MarketStream: 3001]: "MarketStream" created
+2024-04-02 21:17:13,388 - betfairlightweight.streaming.listener - INFO - [MarketStream: 3001]: connection_id: 203-020424111713-19053
+2024-04-02 21:17:13,708 - betfairlightweight.streaming.listener - ERROR - [MarketStream: 3002]: MAX_CONNECTION_LIMIT_EXCEEDED: You have exceeded your max connection limit which is: 2 connection(s).You currently have: 3 active connection(s).
+2024-04-02 21:17:13,708 - flumine.streams.marketstream - ERROR - MarketStream 3000 run error
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.10/dist-packages/flumine/streams/marketstream.py", line 36, in run
+    self.stream_id = self._stream.subscribe_to_markets(
+  File "/home/penjud/.local/lib/python3.10/site-packages/betfairlightweight/streaming/betfairstream.py", line 141, in subscribe_to_markets
+    self._send(message)
+  File "/home/penjud/.local/lib/python3.10/site-packages/betfairlightweight/streaming/betfairstream.py", line 287, in _send
+    self.authenticate()
+  File "/home/penjud/.local/lib/python3.10/site-packages/betfairlightweight/streaming/betfairstream.py", line 92, in authenticate
+    self._data(received_data)
+  File "/home/penjud/.local/lib/python3.10/site-packages/betfairlightweight/streaming/betfairstream.py", line 276, in _data
+    raise ListenerError(self.listener.connection_id, received_data)
+betfairlightweight.exceptions.ListenerError: connection_id: 203-020424111713-19053, data: {"op":"status","id":3002,"statusCode":"FAILURE","errorCode":"MAX_CONNECTION_LIMIT_EXCEEDED","errorMessage":"You have exceeded your max connection limit which is: 2 connection(s).You currently have: 3 active connection(s).","connectionClosed":true,"connectionId":"203-020424111713-19053"}
+
+2024-04-02 21:17:20,929 - __main__ - INFO - Server stopped.

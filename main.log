@@ -1,0 +1,2 @@
+2024-04-03 08:36:03,580 - __main__ - ERROR - Error starting bot: ('Connection aborted.', RemoteDisconnected('Remote end closed connection without response'))
+2024-04-03 08:48:07,676 - __main__ - ERROR - Failed to start bot: 500 - Error starting bot: module 'flumine.flumine' has no attribute 'streams'
