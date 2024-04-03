@@ -7,7 +7,7 @@ logger = logging.getLogger(__name__)
 
 def start_bot():
     try:
-        response = requests.post('http://localhost:8000/start')
+        response = requests.post('http://localhost:5000/start')
         if response.status_code == 200:
             logger.info("Bot started successfully")
         else:
@@ -17,7 +17,7 @@ def start_bot():
 
 def stop_bot():
     try:
-        response = requests.post('http://localhost:8000/stop')
+        response = requests.post('http://localhost:5000/stop')
         if response.status_code == 200:
             logger.info("Bot stopped successfully")
         else:
