@@ -54,12 +54,12 @@ def start_bot_endpoint():
             framework.run()
             is_bot_running = True
             logger.info("Bot started successfully")
-            return "Bot started successfully", 200
+            return {"status": "success", "message": "Bot started successfully"}, 200
         except Exception as e:
             logger.error(f"Error starting bot: {e}")
-            return f"Error starting bot: {e}", 500
+            return {"status": "error", "message": f"Error starting bot: {e}"}, 500
     else:
-        return "Bot is already running", 400
+        return {"status": "error", "message": "Bot is already running"}, 400
 
 @app.route("/stop", methods=["POST"])
 def stop_bot_endpoint():
@@ -70,12 +70,12 @@ def stop_bot_endpoint():
             close_connection()
             is_bot_running = False
             logger.info("Bot stopped successfully")
-            return "Bot stopped successfully", 200
+            return {"status": "success", "message": "Bot stopped successfully"}, 200
         except Exception as e:
             logger.error(f"Error stopping bot: {e}")
-            return f"Error stopping bot: {e}", 500
+            return {"status": "error", "message": f"Error stopping bot: {e}"}, 500
     else:
-        return "Bot is not running", 400
+        return {"status": "error", "message": "Bot is not running"}, 400
     
 if __name__ == "__main__":
     logger.info("Starting the server...")
